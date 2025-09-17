@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,6 +36,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage', 
+    'cloudinary',
     'blog',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -127,6 +132,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Cloudinary Configuration
+cloudinary.config(
+    cloud_name=config('CLOUDINARY_CLOUD_NAME'),
+    api_key=config('CLOUDINARY_API_KEY'),
+    api_secret=config('CLOUDINARY_API_SECRET'),
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = "/files/"
