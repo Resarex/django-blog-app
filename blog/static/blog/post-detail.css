@@ -1,0 +1,322 @@
+body {
+  background-color: var(--surface);
+}
+
+#main-navigation {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+#summary {
+  margin: 2rem auto 3rem auto;
+  padding: 3rem 2rem;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary) 0%, #764ba2 100%);
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  
+}
+
+#summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#summary h2 {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  padding-right: 12rem;  /* adjust based on article width */
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+#summary article {
+  position: static;
+  margin-top: 2rem;
+  padding: 0;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  #summary article {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    text-align: right;
+    margin-top: 0;
+    padding: 1rem 2rem;
+  }
+}
+
+#summary article img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: var(--radius-lg);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+#summary address {
+  font-weight: 600;
+  font-style: normal;
+  margin-bottom: 0.5rem;
+}
+
+#summary a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+#summary a:hover {
+  opacity: 0.8;
+}
+
+#summary time {
+  font-weight: 500;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+#read-later {
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+#read-later button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+#read-later button:hover,
+#read-later button:active {
+  background-color: white;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+main {
+  width: 95%;
+  max-width: 800px;
+  margin: 3rem auto;
+  background-color: var(--background);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  line-height: 1.7;
+}
+
+main h1, main h2, main h3 {
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+main p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background-color: var(--surface);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+#comment-form {
+  margin: 4rem auto;
+  width: 95%;
+  max-width: 600px;
+  border-radius: var(--radius-lg);
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+#comment-form h3 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#comment-form button {
+  font: inherit;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#comment-form button:hover,
+#comment-form button:active {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.form-control {
+  margin-bottom: 1.5rem;
+}
+
+.form-control label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: var(--text-primary);
+}
+
+.form-control input,
+.form-control textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.errorlist {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  color: #ef4444;
+  font-size: 0.875rem;
+}
+
+.invalid label {
+  color: #ef4444;
+}
+
+.invalid input,
+.invalid textarea {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+#comments {
+  margin: 4rem auto;
+  width: 95%;
+  max-width: 800px;
+  border-radius: var(--radius-lg);
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+#comments h2 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+#comments ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#comments li {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+#comments li:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+#comments .comment-author {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+#comments .comment-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #summary {
+    padding: 2rem 1rem;
+    margin: 1rem auto 2rem auto;
+  }
+  
+  #summary h2 {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    line-height: 1.3;
+  }
+  
+  #summary article {
+    position: static;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  #summary article img {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  main {
+    padding: 2rem 1rem;
+  }
+  
+  #comment-form,
+  #comments {
+    padding: 1.5rem;
+  }
+}

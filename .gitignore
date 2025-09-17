@@ -1,0 +1,32 @@
+# Python cache & build
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Django specific
+db.sqlite3
+*.log
+
+# Static & collected files
+staticfiles/
+static_root/
+
+# User uploads (handled separately in production e.g. S3, Render disk)
+uploads/
+
+# Environment variables
+.env
+
+# OS / Editor
+.DS_Store
+.vscode/
